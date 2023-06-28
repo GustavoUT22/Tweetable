@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tweetable</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="body">
+    <header class="header">
+    <div class= "container-lg">
+     <nav class="navbar">
+     <input type="checkbox" id="menu-mobile" />
+
+        <a href="/tweets" class="logo">
+          <img src="<%= asset_path('tweetable.png') %>" alt="My Logo">
+        </a>
+            <!-- option 1 -->
+            <label for="menu-mobile" id="toggle-close">
+              <i class="ri-close-fill ri-sm"></i>
+            </label>
+
+            <!-- option 2 -->
+            <label for="menu-mobile" id="toggle-open">
+              <i class="ri-menu-fill ri-sm"></i>
+            </label>
+        <ul class="expandable navbar__links list-style-none">
+          <%if user_signed_in? %>
+                  <li><span>Thanks for using Tweetable!</span></li>
+                  <li><%= link_to "Profile", users_path, class: "link text-md semibold" %>
+                  <li><%= link_to 'LOG OUT', destroy_user_session_path, data: {turbo_method: :delete}, class: "button--sm button--default overline"%></li>
+              <%else%>
+                  <li><%= link_to "Sign in", new_user_session_path, class: "link text-md semibold"%></li>
+                  <li><%= link_to "Sign up", user_session_path, class: "link text-md semibold"%></li>
+          <%end%>
+
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </ul>
+      <nav>
+    </div>
+  </header>
+    <div class="container-lg">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    </div>
+    <div class="container-lg">
+    <%= yield %>
+    </div>
+    <footer class="footer">
+      <div class="container-lg section-padding-xs">
+        <div class="footer__content__title">
+        <span class="text-sm footer_content_color">
+         © 2023 - Codeable Tweetable
+        </span>
+        </div>
+        <div class="footer__content__title">
+        <span class="text-sm footer_content_color">
+         Build with ♥ by
+        </span>
+        </div>
+        <span class="footer__content footer__center">
+          <div class="footer_content_color">
+            <i class="ri-linkedin-box-line ri-sm align-middle"></i>
+            <span class="text-xs">Student</span>
+          </div>
+          <div class="footer_content_color">
+            <i class="ri-linkedin-box-line ri-sm align-middle"></i>
+            <span class="text-xs">Gustavo Ugarte</span>
+          </div>
+          <div class="footer_content_color">
+            <i class="ri-linkedin-box-line ri-sm align-middle"></i>
+            <span class="text-xs">Student</span>
+          </div>
+        </span>
+        <span class="footer__content footer__center">
+          <div class="footer_content_color">
+            <i class="ri-linkedin-box-line ri-sm align-middle"></i>
+            <span class="text-xs">Student</span>
+          </div>
+          <div class="footer_content_color">
+            <i class="ri-linkedin-box-line ri-sm align-middle"></i>
+            <span class="text-xs">Student</span>
+          </div>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

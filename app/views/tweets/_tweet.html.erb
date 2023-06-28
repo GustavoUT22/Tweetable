@@ -1,0 +1,65 @@
+<div id="<%= dom_id tweet %>">
+  <div class="info-user">
+
+    <div>
+      <% if tweet.user.avatar.present? %>
+        <%= image_tag tweet.user.avatar, class: "avatar-tweet" %>
+      <% else %>
+        <%= image_tag image_path("user.jpeg"), class: "avatar-tweet" %>
+      <% end %>
+    </div>
+
+    <div class="info-user-date">
+      <div class="info-user">
+        <p class="heading-xs name">
+          <%= tweet.user.name %>
+        </p>
+
+        <p class="heading-xs username">
+          <%="@#{tweet.user.username}"%>
+        </p>
+      </div>
+      <div>
+        <p>
+          <%= time_ago_in_words(tweet.user.created_at) %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    <%= tweet.body %>
+  </p>
+  <!--
+    <p>
+    <strong>Replied to:</strong>
+    <%= tweet.replied_to_id %>
+  </p>
+  -->
+
+
+  <div>
+    <% if tweet.likes.exists?(user_id: current_user.id) %>
+      <%= button_to tweet_like_path(tweet, tweet.likes.find_by(user_id: current_user.id)), method: :delete, class: "btn btn-danger", remote: true do %>
+        Quitar me gusta
+      <% end %>
+    <% else %>
+      <%= button_to tweet_likes_path(tweet), method: :post, class: "btn btn-primary", remote: true do %>
+        Me gusta
+      <% end %>
+    <% end %>
+  </div>
+
+  <p>
+    <strong>Likes</strong>
+    <%= tweet.likes_count %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= tweet.user_id %>
+  </p>
+  
+
+
+</div>

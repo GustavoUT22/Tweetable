@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+  <h1 class="container-lg titles">Home</h1>
+<%= render "form", tweet: @tweet %>
+
+<div id="tweets">
+  <% @tweets.each do |tweet| %>
+    <% if !tweet.replied_to_id? %>
+    <div class="tweet">
+    <%= render tweet %>
+    <p>
+    <p>
+      <strong>Replies</strong>
+      <%= tweet.replies_count %>
+    </p>
+    <%= link_to "Show this tweet", tweet %>
+    </p>
+
+     </div>
+    <% end %>
+  <% end %>
+</div>
+

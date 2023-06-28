@@ -1,0 +1,27 @@
+
+<p style="color: green"><%= notice %></p>
+
+<div class="tweet">
+  <%= render @tweet %>
+</div>
+<%= render "form", tweet: Tweet.new(replied_to_id: @tweet.id) %>
+
+<% @tweet.replies.each do |tweet| %>
+  <div class="tweet">
+  <%= render tweet %>
+  <p>
+    <strong>Replies</strong>
+    <%= tweet.replies_count %>
+  </p>
+  </p>
+    <%= link_to "Show this tweet", tweet %>
+  </p>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to "Edit this tweet", edit_tweet_path(@tweet) %> |
+  <%= link_to "Back to tweets", tweets_path %>
+
+  <%= button_to "Destroy this tweet", @tweet, method: :delete %>
+</div>

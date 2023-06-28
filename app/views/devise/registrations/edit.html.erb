@@ -1,0 +1,62 @@
+  <div class="container">
+    <div class="title-center">
+      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    </div>
+
+    <div class="tweet input-box">
+      <div class="field">
+        <%= f.label :username, class: "overline" %><br />
+        <%= f.text_field :username, class: "w-full input", autofocus: true, autocomplete: "username" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, class: "overline" %><br />
+        <%= f.email_field :email, class: "w-full input", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :name, class: "overline" %><br />
+        <%= f.text_field :name, class: "w-full input", autofocus: true, autocomplete: "name" %>
+      </div>
+
+      <div>
+        <span class= "overline">Avatar</span>
+        <%= image_tag image_path("anonimo.png"), class: "avatar-tweet" %>
+      </div>
+      
+      <div class="field">
+        <%= f.file_field :avatar %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :password, class: "overline" %><br />
+        <%= f.password_field :password, placeholder: "**********", class: "w-full input", autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: "overline" %><br />
+        <%= f.password_field :password_confirmation, placeholder: "**********", class: "w-full input", autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password, class: "overline" %><br />
+        <%= f.password_field :current_password, placeholder: "**********", class: "w-full input", autocomplete: "current-password" %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Update", class: "w-full button button--primary" %>
+      </div>
+    <% end %>
+    <%= link_to "Back", :back, class: "w-full button button--default text-decoration-none section-xs" %>
+  </div>
+</div>

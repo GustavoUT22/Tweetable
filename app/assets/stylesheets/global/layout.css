@@ -1,0 +1,64 @@
+.container-sm {
+    max-width: 640px;
+    margin: auto;
+    padding: 0px 16px;
+}
+
+.container, .container-md {
+    max-width: 768px;
+    margin: auto;
+    padding: 0px 16px;
+}
+
+.container-lg {
+    max-width: 1024px;
+    margin: auto;
+    padding: 0px 16px;
+}
+
+.container-xl {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0px 16px;
+}
+
+.section-sm {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.section-xs {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.section, .section-md {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.section-lg {
+    margin-top: 96px;
+    margin-bottom: 96px;
+}
+
+.section-xl {
+    margin-top: 144px;
+    margin-bottom: 144px;
+}
+
+.section-padding-sm {
+    padding: 32px 0px;
+}
+
+.section-padding, .section-padding-md {
+    padding: 48px 0px;
+}
+
+.section-padding-lg {
+    padding: 96px 0px;
+}
+
+.section-padding-xl {
+    padding: 144px 0px;
+}

@@ -1,0 +1,63 @@
+.tweet {
+    background-color: white;
+    margin: 16px 0px;
+    padding: 8px;
+    border-radius: 16px;
+}
+.input-box {
+    padding: 24px 16px;
+}
+.formulario {
+    padding: 24px 16px;
+    background-color: white;
+    margin: 16px 0px;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.input-form {
+ resize: none;
+ text-transform: none;
+ line-height: 1.5em;
+ border: #D3D3D3;
+}
+
+.avatar-tweet {
+    border-radius: 50%;
+    max-width: 60px;
+    max-height: 60px;
+    padding: 4px;
+}
+
+.info-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px
+}
+
+.info-user-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name {
+    color: black;
+    font-weight: 700;
+}
+
+.username {
+    color: var(--pink-700);
+    font-weight: 400;
+}
+
+.titles {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+::placeholder {
+    color: #D3D3D3;
+}

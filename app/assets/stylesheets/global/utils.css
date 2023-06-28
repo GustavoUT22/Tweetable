@@ -1,0 +1,66 @@
+.body {
+    background-color: var(--gray-100);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.overline {
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.color-primary {
+    color: var(--pink-600);
+}
+
+.bg-color-secondary-light {
+    background-color: var(--secondary-light);
+}
+
+.color-primary-dark {
+    color: var(--primary-dark);
+}
+.title-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-center {
+    text-align: center;
+}
+.direction-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0px;
+}
+.ml-4 {
+    margin-left: 1rem;
+}
+
+.button-second{
+    color: var(--primary)
+}

@@ -1,0 +1,50 @@
+<section class="section">
+  <div>
+    <div class="flex flex-column gap-4 content-lg">
+      <div class="profile container-lg"> 
+        <h1 class="heading">Profile</h1>
+
+
+        <div>
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, class: "avatar" %>
+          <% else %>
+            <%= image_tag image_path("user.jpeg"), class: "avatar" %>
+          <% end %>
+        </div>
+        <div class="">
+          <%= @user.name %>
+        </div>
+
+        <div>
+          <%= "@#{@user.username}" %>
+        </div>
+
+        <div>
+          <span>Joined on</span>
+          <% formatted_time = @user.created_at.strftime("%b %e, %Y") %>
+          <%= formatted_time %>
+        </div>
+      </div>
+      </div>
+        <h1 class="heading-xs formulario">Tweets</h1>
+            <div id="tweets">
+            <% @user.tweets.each do |tweet| %>
+                <% if !tweet.replied_to_id? %>
+                <div class="tweet">
+                <%= render tweet %>
+                <p>
+                <%= link_to "Show this tweet", tweet %>
+                </p>
+                </div>
+                <% end %>
+            <% end %>
+          </div>
+      <div>
+      <div>
+        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to 'Back', root_path %>
+      </div>
+    </div>
+  </div>
+</section>

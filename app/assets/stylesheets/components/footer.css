@@ -1,0 +1,29 @@
+/* .footer {
+    background-color: var(--secondary-light);
+  }
+   */
+  .footer__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    /* padding: 3em 1em; */
+  }
+  
+  .footer__content__title {
+    text-align: center;
+    line-height: 1em;
+  }
+  
+  .footer__center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer_content_color {
+    color: #424242;
+  }
+  
+  .align-middle {
+    vertical-align: middle; /* Alinea verticalmente el elemento en el centro */
+  }
